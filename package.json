@@ -1,0 +1,24 @@
+{
+  "name": "tiktok-stadt",
+  "version": "1.0.0",
+  "description": "Interaktives TikTok-LIVE-Spiel: Eine Stadt wächst durch Geschenke",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "demo": "node server.js --demo",
+    "sim": "node simulate.js",
+    "showcase": "node simulate.js showcase",
+    "online": "node online.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "tiktok-live-connector": "^2.5.0",
+    "ws": "^8.23.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

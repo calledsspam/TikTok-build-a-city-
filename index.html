@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0b1026">
+<link rel="manifest" href="manifest.webmanifest">
+<title>TikTok-Stadt</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="game" width="1080" height="1920"></canvas>
+
+<div id="startOverlay" class="hidden">
+  <div class="ovCard">
+    <div class="ovIcon">🏙️</div>
+    <div class="ovTitle">TikTok-Stadt</div>
+    <div class="ovTap">🔊 Tippe hier, um zu starten</div>
+    <div class="ovNote">Der Browser erlaubt Musik &amp; Sounds erst nach einem Tipp.</div>
+    <div id="userBox" style="display:none">
+      <div id="userCurrent"></div>
+      <input id="userInput" placeholder="dein TikTok-Name (ohne @)" autocomplete="off" autocapitalize="off">
+      <button id="userBtn">Verbinden</button>
+    </div>
+  </div>
+</div>
+
+<div id="simPanel" class="hidden">
+  <div class="simHead">🧪 Test-Panel <small>(Taste <b>S</b> ein/aus)</small></div>
+  <label>Name <input id="simName" value="Testzuschauer"></label>
+  <label>Anzahl (Combo) <input id="simCount" type="number" value="1" min="1" max="99"></label>
+  <div id="simGifts" class="grid"></div>
+  <div class="grid">
+    <button data-sim="like">❤️ 50 Likes</button>
+    <button data-sim="like500">❤️ 500 Likes</button>
+    <button data-sim="follow">➕ Follow</button>
+    <button data-sim="share">🔗 Teilen</button>
+    <button data-sim="park">💬 !park</button>
+    <button data-sim="baum">💬 !baum</button>
+    <button data-sim="random">🎲 Zufalls-Welle</button>
+    <button data-sim="night">🌙 Tag/Nacht</button>
+    <button data-sim="fireworks">🎆 Feuerwerk</button>
+    <button data-sim="reset" class="danger">🗑️ Stadt zurücksetzen</button>
+  </div>
+  <div class="simSub">🔊 Ton</div>
+  <button id="simMute" class="wide"></button>
+  <label>Gesamt <input id="vol_master" type="range" min="0" max="100"></label>
+  <label>Musik <input id="vol_music" type="range" min="0" max="100"></label>
+  <label>Effekte <input id="vol_sfx" type="range" min="0" max="100"></label>
+  <div id="simUserRow" style="display:none">
+    <div class="simSub">📡 TikTok-Verbindung</div>
+    <label>Name <input id="simUser" placeholder="ohne @"></label>
+    <button id="simUserBtn" class="wide">Verbinden</button>
+  </div>
+  <div class="hint">Tasten: 1–9 = Geschenke · L = Likes · F = Follow · P = !park · N = Tag/Nacht · M = Ton aus/an</div>
+</div>
+
+<script src="audio.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

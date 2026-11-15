@@ -1,0 +1,92 @@
+{
+  "_hinweis": "Hier kannst du alles anpassen. Nach dem Speichern die Spielseite neu laden (F5). Gebäude-Typen: tree, flowers, house, familyHouse, shop, apartment, park, skyscraper, tower, stadium. Events: fireworks, daynight, festival, cars.",
+
+  "tiktokUsername": "",
+  "port": 8080,
+  "adminKey": "",
+  "cityName": "TikTok-Stadt",
+
+  "layout": {
+    "showLegend": true,
+    "showLeaderboard": true,
+    "leaderboardSize": 5,
+    "maxToasts": 4
+  },
+
+  "gifts": {
+    "Rose":          { "de": "Rose",          "emoji": "🌹", "diamonds": 1,     "actions": [{ "build": "tree" }] },
+    "TikTok":        { "de": "TikTok",        "emoji": "🎵", "diamonds": 1,     "actions": [{ "build": "house" }] },
+    "GG":            { "de": "GG",            "emoji": "🎮", "diamonds": 1,     "actions": [{ "build": "flowers" }], "legend": false },
+    "Ice Cream Cone":{ "de": "Eistüte",       "emoji": "🍦", "diamonds": 1,     "actions": [{ "build": "flowers" }], "legend": false },
+    "Heart Me":      { "de": "Heart Me",      "emoji": "💗", "diamonds": 1,     "actions": [{ "build": "tree" }], "legend": false },
+    "Finger Heart":  { "de": "Fingerherz",    "emoji": "🫰", "diamonds": 5,     "actions": [{ "build": "familyHouse" }] },
+    "Perfume":       { "de": "Parfüm",        "emoji": "🧴", "diamonds": 20,    "actions": [{ "build": "shop" }], "legend": false },
+    "Doughnut":      { "de": "Donut",         "emoji": "🍩", "diamonds": 30,    "actions": [{ "build": "shop" }] },
+    "Hand Hearts":   { "de": "Handherzen",    "emoji": "🫶", "diamonds": 100,   "actions": [{ "build": "apartment" }] },
+    "Confetti":      { "de": "Konfetti",      "emoji": "🎊", "diamonds": 100,   "actions": [{ "build": "park" }, { "event": "confetti" }] },
+    "Corgi":         { "de": "Corgi",         "emoji": "🐕", "diamonds": 299,   "actions": [{ "build": "apartment", "count": 2 }], "legend": false },
+    "Money Gun":     { "de": "Geldkanone",    "emoji": "💸", "diamonds": 500,   "actions": [{ "build": "skyscraper" }], "legend": false },
+    "Galaxy":        { "de": "Galaxie",       "emoji": "🌌", "diamonds": 1000,  "actions": [{ "build": "skyscraper" }, { "event": "fireworks" }] },
+    "Sports Car":    { "de": "Sportwagen",    "emoji": "🏎️", "diamonds": 7000,  "actions": [{ "build": "skyscraper" }, { "event": "cars", "count": 6 }], "legend": false },
+    "Interstellar":  { "de": "Interstellar",  "emoji": "🚀", "diamonds": 10000, "actions": [{ "build": "tower" }, { "event": "fireworks" }], "legend": false },
+    "Lion":          { "de": "Löwe",          "emoji": "🦁", "diamonds": 29999, "actions": [{ "build": "stadium" }, { "event": "fireworks" }, { "event": "daynight" }] },
+    "Universe":      { "de": "Universum",     "emoji": "🪐", "diamonds": 34999, "actions": [{ "event": "festival" }, { "build": "stadium" }, { "build": "skyscraper", "count": 3 }, { "build": "tower" }] }
+  },
+
+  "_hinweis_tiers": "Für Geschenke, die oben NICHT stehen: Gebäude nach Diamantenwert (größter passender 'min'-Wert gewinnt).",
+  "unknownGiftTiers": [
+    { "min": 1,     "actions": [{ "build": "tree" }] },
+    { "min": 5,     "actions": [{ "build": "house" }] },
+    { "min": 20,    "actions": [{ "build": "shop" }] },
+    { "min": 99,    "actions": [{ "build": "apartment" }] },
+    { "min": 500,   "actions": [{ "build": "skyscraper" }] },
+    { "min": 5000,  "actions": [{ "build": "tower" }, { "event": "fireworks" }] },
+    { "min": 20000, "actions": [{ "build": "stadium" }, { "event": "fireworks" }] }
+  ],
+
+  "likes": {
+    "_hinweis": "Pro X Likes läuft eine neue Person durch die Stadt, pro Y Likes wächst ein Blumenbeet/Baum.",
+    "likesPerWalker": 20,
+    "likesPerGrowth": 200,
+    "growthBuild": "flowers",
+    "maxWalkers": 160
+  },
+
+  "follow": { "build": "followerHouse", "enabled": true },
+  "share":  { "actions": [{ "event": "confetti" }], "enabled": true },
+
+  "commands": {
+    "_hinweis": "Chat-Befehle (kostenlos). cooldownSec gilt pro Zuschauer, globalCooldownSec für alle zusammen.",
+    "enabled": true,
+    "list": {
+      "!park":      { "actions": [{ "build": "park" }],     "label": "Park",       "cooldownSec": 120, "globalCooldownSec": 20 },
+      "!baum":      { "actions": [{ "build": "tree" }],     "label": "Baum",       "cooldownSec": 60,  "globalCooldownSec": 5 },
+      "!blumen":    { "actions": [{ "build": "flowers" }],  "label": "Blumenbeet", "cooldownSec": 60,  "globalCooldownSec": 5 },
+      "!feuerwerk": { "actions": [{ "event": "fireworks", "small": true }], "label": "Mini-Feuerwerk", "cooldownSec": 300, "globalCooldownSec": 60 }
+    }
+  },
+
+  "audio": {
+    "_hinweis": "Lautstärke 0.0 bis 1.0. Alle Klänge & die Musik werden selbst im Browser erzeugt (lizenzfrei). Im Test-Panel (Taste S) einstellbar, M = stumm.",
+    "enabled": true,
+    "muted": false,
+    "master": 0.8,
+    "music": 0.35,
+    "musicEnabled": true,
+    "sfx": 0.7,
+    "showStartOverlay": true
+  },
+
+  "buildSpeedPerSecond": 5,
+  "maxQueue": 300,
+
+  "levels": [
+    { "name": "Siedlung",   "points": 0 },
+    { "name": "Dorf",       "points": 100 },
+    { "name": "Kleinstadt", "points": 500 },
+    { "name": "Stadt",      "points": 2000 },
+    { "name": "Großstadt",  "points": 8000 },
+    { "name": "Metropole",  "points": 30000 },
+    { "name": "Megacity",   "points": 100000 }
+  ]
+}

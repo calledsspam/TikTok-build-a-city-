@@ -1,0 +1,13 @@
+# Render.com Blueprint – kostenloses Hosting (siehe Anleitung_Handy.md, Weg B)
+services:
+  - type: web
+    name: tiktok-stadt
+    runtime: node
+    plan: free
+    buildCommand: npm install --omit=dev
+    startCommand: node server.js
+    envVars:
+      - key: TIKTOK_USERNAME
+        sync: false
+      - key: ADMIN_KEY
+        generateValue: true
